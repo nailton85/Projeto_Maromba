@@ -21,9 +21,8 @@ public interface SistemaGestorDeTreino {
     /**
      *
      * @param diaDaSemada
-     * @param hora
      */
-    public void rotinaDeTreinos(List<Treino>, String diaDaSemada, String hora);
+    public void rotinaDeTreinos(List<Treino>, String diaDaSemada);
 
     /**
      *
@@ -37,11 +36,18 @@ public interface SistemaGestorDeTreino {
 
     /**
      *
-     * @param GrauDeAtividade
+     * @param nivelDeItensidade
      * @param TMB
      * @return
      */
-    public double TMT(String GrauDeAtividade, double TMB);
+    public double TMT(String nivelDeItensidade, double TMB);
+
+    /**
+     *
+     * @param peso
+     * @return
+     */
+    public double hidratacao(double peso);
 
 
 }
