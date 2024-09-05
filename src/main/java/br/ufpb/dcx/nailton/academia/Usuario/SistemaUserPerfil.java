@@ -1,14 +1,14 @@
-package br.ufpb.dcx.nailton.academia;
+package br.ufpb.dcx.nailton.academia.Usuario;
 
 import java.util.List;
 
-public interface SistemaGestorDeTreino {
+public interface SistemaUserPerfil {
     /**
      *
      * @param aluno
-     * @throws AlunoJaExisteException
+     * @throws UsuarioJaExisteException
      */
-    public void cadastraAluno(Aluno aluno)throws AlunoJaExisteException;
+    public void cadastraUsuario(Usuario aluno)throws UsuarioJaExisteException;
 
     /**
      *
@@ -16,13 +16,13 @@ public interface SistemaGestorDeTreino {
      * @param senha
      * @return
      */
-    public List<Aluno> loguinAluno(String email, String senha);
+    public List<Usuario> loguinAluno(String email, String senha);
 
     /**
      *
      * @param diaDaSemada
      */
-    public void rotinaDeTreinos(List<Treino>, String diaDaSemada);
+    public void rotinaDeTreinos(String diaDaSemada);
 
     /**
      *
