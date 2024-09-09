@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.ufpb.dcx.nailton.academia</groupId>
-    <artifactId>Projeto_Maromba</artifactId>
+    <artifactId>Projeto_Academia</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
