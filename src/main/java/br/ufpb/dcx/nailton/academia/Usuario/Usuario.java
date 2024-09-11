@@ -5,10 +5,10 @@ import br.ufpb.dcx.nailton.treinos.Treino;
 import java.util.List;
 
 public class Usuario {
-    private List<DadosDeUsuario> dados;
-    private List<CondicaoFisica> fisico;
-    private List<Treino> treino;
-    private List<Dieta> dieta;
+    private DadosDeUsuario dados;
+    private CondicaoFisica fisico;
+    private Treino treino;
+    private Dieta dieta;
 
 
 }
