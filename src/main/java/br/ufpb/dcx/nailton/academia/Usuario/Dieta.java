@@ -4,4 +4,5 @@ public class Dieta {
     private double caloria;
     private double macrosNutrientes;
 
+
 }

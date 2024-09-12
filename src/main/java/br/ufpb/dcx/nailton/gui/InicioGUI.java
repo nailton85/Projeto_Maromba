@@ -10,7 +10,7 @@ public class InicioGUI extends JFrame {
     public InicioGUI(){
         setTitle("Aguma coisa");
         setSize(800, 600); //tamanho da janela
-        setLocation(150, 150);
+        setLocation(250, 280);
         setResizable(false);
     }
 
