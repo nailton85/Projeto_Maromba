@@ -1,11 +1,9 @@
-package br.ufpb.dcx.nailton.academia.ADM;
+package br.ufpb.dcx.nailton.academia;
 
-import br.ufpb.dcx.nailton.academia.Usuario.Usuario;
-import br.ufpb.dcx.nailton.treinos.Treino;
+import br.ufpb.dcx.nailton.academia.usuario.Usuario;
+import br.ufpb.dcx.nailton.academia.treino.Treino;
 
-import java.util.List;
-
-public class SistemaGestaoGeralPreogr implements SistemaGestaoGeral{
+public class SistemaGestaoGeralPreogr implements SistemaGestaoGeral {
     @Override
     public Treino adicionaTreino(String nome, String descricao, String nomeDoGif) {
         return null;

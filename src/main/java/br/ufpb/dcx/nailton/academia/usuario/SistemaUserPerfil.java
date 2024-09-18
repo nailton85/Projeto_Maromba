@@ -1,4 +1,4 @@
-package br.ufpb.dcx.nailton.academia.Usuario;
+package br.ufpb.dcx.nailton.academia.usuario;
 
 import java.util.List;
 

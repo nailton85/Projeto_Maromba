@@ -1,4 +1,4 @@
-package br.ufpb.dcx.nailton.treinos;
+package br.ufpb.dcx.nailton.academia.treino;
 
 public class Exercicio {
     private String nome;

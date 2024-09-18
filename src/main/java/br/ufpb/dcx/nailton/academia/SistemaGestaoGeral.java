@@ -1,10 +1,8 @@
-package br.ufpb.dcx.nailton.academia.ADM;
+package br.ufpb.dcx.nailton.academia;
 
 
-import br.ufpb.dcx.nailton.treinos.Treino;
-import br.ufpb.dcx.nailton.academia.Usuario.Usuario;
-
-import java.util.List;
+import br.ufpb.dcx.nailton.academia.treino.Treino;
+import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 
 public interface SistemaGestaoGeral {
     public static final String PREFIXO_LINK_GIF = "./imgs/gif/";

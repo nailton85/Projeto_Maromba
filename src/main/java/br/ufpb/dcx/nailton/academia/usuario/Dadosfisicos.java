@@ -1,10 +1,10 @@
-package br.ufpb.dcx.nailton.academia.Usuario;
+package br.ufpb.dcx.nailton.academia.usuario;
 
-public class dadosfisicos {
+public class Dadosfisicos {
     private double peso;
     private double altura;
     private int idade;
-    public dadosfisicos(double peso, double altura, int idade){
+    public Dadosfisicos(double peso, double altura, int idade){
         this.peso = peso;
         this.altura = altura;
         this.idade = idade;
