@@ -33,4 +33,8 @@ public class Dadosfisicos {
     public void setIdade(int idade) {
         this.idade = idade;
     }
+
+    public enum SemanaDia {
+        SEGUNDA, TERÇA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO
+    }
 }

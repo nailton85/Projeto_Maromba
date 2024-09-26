@@ -1,7 +1,5 @@
 package br.ufpb.dcx.nailton.academia.usuario;
 
-import br.ufpb.dcx.nailton.academia.treino.Treino;
-
 public class Usuario {
     private DadosDeUsuario dados;
     private Dadosfisicos fisico;
