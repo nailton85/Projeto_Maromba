@@ -6,7 +6,7 @@ import java.awt.*;
 public class janelaPrincipal extends JFrame {
     private Image princ;
     JLabel linha1;
-    ImageIcon tela = new ImageIcon("./img/Pesos.jpg");
+    ImageIcon tela = new ImageIcon("./img/fundo.jpg");
 
     public janelaPrincipal(){
         setTitle("aaaaaaaaa");

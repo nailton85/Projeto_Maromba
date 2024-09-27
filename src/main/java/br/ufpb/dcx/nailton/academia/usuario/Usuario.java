@@ -3,13 +3,11 @@ package br.ufpb.dcx.nailton.academia.usuario;
 public class Usuario {
     private DadosDeUsuario dados;
     private Dadosfisicos fisico;
-    private Treino treino;
     private Dieta dieta;
 
-    public Usuario(DadosDeUsuario dados, Dadosfisicos fisico, Treino treino, Dieta dieta){
+    public Usuario(DadosDeUsuario dados, Dadosfisicos fisico, Dieta dieta){
         this.dados = dados;
         this.fisico = fisico;
-        this.treino = treino;
         this.dieta = dieta;
     }
 
@@ -27,14 +25,6 @@ public class Usuario {
 
     public void setFisico(Dadosfisicos fisico) {
         this.fisico = fisico;
-    }
-
-    public Treino getTreino() {
-        return treino;
-    }
-
-    public void setTreino(Treino treino) {
-        this.treino = treino;
     }
 
     public Dieta getDieta() {

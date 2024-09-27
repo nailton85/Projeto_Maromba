@@ -1,12 +1,24 @@
 package br.ufpb.dcx.nailton.dados;
 
-import java.io.*;
-import java.nio.Buffer;
-import java.util.ArrayList;
-import java.util.List;
+import br.ufpb.dcx.nailton.academia.treino.Exercicio;
+import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 
-public class ProgrGerenciaArmazenamento implements GerenciaArmazenamento{
-    @Override
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class GravadorDeDados {
+    private HashMap<String, Exercicio> recuperaTreinos;
+    private Map<String, Exercicio> salvarTreion;
+    private HashMap<String, Usuario> recuperaUsuario;
+    private Map<String, Usuario> salvarUsuario;
+
+    public static final String ARQUIVO_TREINOS = "treinos.dat";
+    public static final String DADOS_USUARIO = "usuario.dat";
+
+
     public List<String> recupetaTextoDeArquivo(String nomeArquivo) throws IOException {
         BufferedReader leitor = null;
         List<String> textoLido = new ArrayList<String>();
