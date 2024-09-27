@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GravadorDeDados {
-    private HashMap<String, Exercicio> recuperaTreinos;
+/*    private HashMap<String, Exercicio> recuperaTreinos;
     private Map<String, Exercicio> salvarTreion;
     private HashMap<String, Usuario> recuperaUsuario;
     private Map<String, Usuario> salvarUsuario;
@@ -53,4 +53,5 @@ public class GravadorDeDados {
             }
         }
     }
+}*/
 }

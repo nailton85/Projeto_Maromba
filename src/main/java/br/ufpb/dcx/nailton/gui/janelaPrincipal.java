@@ -13,7 +13,7 @@ public class janelaPrincipal extends JFrame {
         setSize(800,600);
         setLocation(250,250);
         setResizable(true);
-        princ = new ImageIcon("./img/Pesos.jpg").getImage();
+        princ = new ImageIcon("./img/fundo.jpg").getImage();
         getContentPane().add(new PanelConFondo());
         linha1 = new JLabel(tela, JLabel.CENTER);
 
