@@ -1,4 +1,4 @@
-package br.ufpb.dcx.nailton.gui;
+package br.ufpb.dcx.nailton.janelas.gui;
 
 import javax.swing.*;
 import java.awt.*;
