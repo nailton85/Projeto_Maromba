@@ -3,12 +3,10 @@ package br.ufpb.dcx.nailton.academia.usuario;
 public class DadosDeUsuario{
     private String nome;
     private String email;
-    private String senha;
 
-    public DadosDeUsuario(String nome, String email, String senha) {
+    public DadosDeUsuario(String nome, String email) {
         this.nome = nome;
         this.email = email;
-        this.senha = senha;
     }
 
     public String getNome() {
@@ -27,11 +25,4 @@ public class DadosDeUsuario{
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
 }

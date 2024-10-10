@@ -12,35 +12,9 @@ public interface SistemaUserPerfil {
 
     /**
      *
-     * @param email
-     * @param senha
-     * @return
-     */
-    public List<Usuario> loguinAluno(String email, String senha);
-
-    /**
-     *
      * @param diaDaSemada
      */
     public void rotinaDeTreinos(String diaDaSemada);
-
-    /**
-     *
-     * @param Sexo
-     * @param peso
-     * @param idade
-     * @param altura
-     * @return
-     */
-    public double TMB(String Sexo, double peso, int idade, double altura);
-
-    /**
-     *
-     * @param nivelDeItensidade
-     * @param TMB
-     * @return
-     */
-    public double TMT(String nivelDeItensidade, double TMB);
 
     /**
      *

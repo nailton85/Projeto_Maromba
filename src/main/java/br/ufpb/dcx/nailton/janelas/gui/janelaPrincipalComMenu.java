@@ -23,7 +23,7 @@ public class janelaPrincipalComMenu extends JFrame {
         setResizable(false);
 
         barraMenu();
-        imagensDaJanela();
+        //imagensDaJanela();
         fundo();
 
     }

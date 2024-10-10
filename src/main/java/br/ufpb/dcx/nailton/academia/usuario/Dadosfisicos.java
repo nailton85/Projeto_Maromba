@@ -4,10 +4,12 @@ public class Dadosfisicos {
     private double peso;
     private double altura;
     private int idade;
-    public Dadosfisicos(double peso, double altura, int idade){
+    private Sexo sexo;
+    public Dadosfisicos(double peso, double altura, int idade, Sexo sexo){
         this.peso = peso;
         this.altura = altura;
         this.idade = idade;
+        this.sexo = sexo;
     }
 
     public double getPeso() {
@@ -32,6 +34,14 @@ public class Dadosfisicos {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
     }
 
     public enum SemanaDia {
