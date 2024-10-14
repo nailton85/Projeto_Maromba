@@ -1,8 +1,8 @@
 package br.ufpb.dcx.nailton.academia.usuario;
 
-import java.util.List;
+import br.ufpb.dcx.nailton.academia.util.MetodosUtilitariosEmplement;
 
-public class SistemaUserPerfilPrograma implements SistemaUserPerfil{
+public class SistemaUserPerfilPrograma extends MetodosUtilitariosEmplement implements SistemaUserPerfil{
 
     @Override
     public void cadastraUsuario(Usuario aluno) throws UsuarioJaExisteException {

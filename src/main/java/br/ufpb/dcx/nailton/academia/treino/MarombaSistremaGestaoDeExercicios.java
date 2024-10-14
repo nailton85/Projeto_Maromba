@@ -1,11 +1,10 @@
 package br.ufpb.dcx.nailton.academia.treino;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import br.ufpb.dcx.nailton.academia.util.MetodosUtilitariosEmplement;
 
-public class MarombaSistremaGestaoDeExercicios implements SistemaGestaoDeExercicios{
-    private Map<String, Exercicio> Exercicio;
+import java.util.List;
+
+public class MarombaSistremaGestaoDeExercicios extends MetodosUtilitariosEmplement implements SistemaGestaoDeExercicios{
     @Override
     public void adicionaExercicio(String nome, String descricao, partesDoCorpo musculo, String nomeDoGif) throws ExercicioJaExisteExeption {
 
@@ -24,15 +23,5 @@ public class MarombaSistremaGestaoDeExercicios implements SistemaGestaoDeExercic
     @Override
     public List<Exercicio> filtrarExercicioPorTipo(partesDoCorpo tipo) throws TipoNuloException {
         return null;
-    }
-
-    @Override
-    public List<String> recupetaTextoDeArquivo(String nomeArquivo) throws IOException {
-        return null;
-    }
-
-    @Override
-    public void gravaTextoEmArquivo(List<String> texto, String nomeArquivo) throws IOException {
-
     }
 }

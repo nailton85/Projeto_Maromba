@@ -1,8 +1,8 @@
 package br.ufpb.dcx.nailton.academia.usuario;
 
-import java.util.List;
+import br.ufpb.dcx.nailton.academia.util.MetodosUtilitarios;
 
-public interface SistemaUserPerfil {
+public interface SistemaUserPerfil extends MetodosUtilitarios {
     /**
      *
      * @param aluno
