@@ -6,6 +6,7 @@ import br.ufpb.dcx.nailton.academia.treino.TipoNuloException;
 import br.ufpb.dcx.nailton.academia.treino.partesDoCorpo;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioInexistenteExeption;
+import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
 import br.ufpb.dcx.nailton.academia.util.MetodosUtilitarios;
 
 import java.io.*;
@@ -23,6 +24,7 @@ public class MetodosUtilitariosEmplement implements MetodosUtilitarios {
     public MetodosUtilitariosEmplement(){
         this.exercicio = new HashMap<>();
         this.gravador = new GravadorDeDados();
+        this.usuario = new HashMap<>();
     }
 
 
@@ -35,6 +37,16 @@ public class MetodosUtilitariosEmplement implements MetodosUtilitarios {
     @Override
     public List<Exercicio> filtrarExercicioPorTipo(partesDoCorpo tipo) throws TipoNuloException {
         return null;
+    }
+
+    @Override
+    public void cadastraUsuario(String nome, String email) throws UsuarioJaExisteException {
+        if(this.usuario.containsKey(nome)){
+            throw new UsuarioJaExisteException("Já existe usuario cadastrado");
+        }else{
+            Usuario u = new Usuario(nome, email);
+            this.usuario.put(nome, u);
+        }
     }
 
     @Override

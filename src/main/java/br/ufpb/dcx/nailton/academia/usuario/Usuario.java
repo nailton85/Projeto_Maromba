@@ -8,7 +8,7 @@ public class Usuario {
     private DadosDeUsuario dados;
     private Dadosfisicos fisico;
     private Dieta dieta;
-    private List<Exercicio> exercicios;
+    private TabelaDeTreino treinos;
 
     public Usuario(DadosDeUsuario dados, Dadosfisicos fisico, Dieta dieta){
         this.dados = dados;

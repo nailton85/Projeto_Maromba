@@ -44,7 +44,4 @@ public class Dadosfisicos {
         this.sexo = sexo;
     }
 
-    public enum SemanaDia {
-        SEGUNDA, TERÇA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO
-    }
 }

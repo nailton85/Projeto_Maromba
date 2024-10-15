@@ -6,6 +6,7 @@ import br.ufpb.dcx.nailton.academia.treino.TipoNuloException;
 import br.ufpb.dcx.nailton.academia.treino.partesDoCorpo;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioInexistenteExeption;
+import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,6 +25,7 @@ public interface MetodosUtilitarios {
      * @return Uma Lista de exercicios que trabalhão esta area corporal
      */
     public List<Exercicio> filtrarExercicioPorTipo(partesDoCorpo tipo) throws TipoNuloException;
+    public void cadastraUsuario(String nome, String email) throws UsuarioJaExisteException;
 
     public void removerUsuario(Usuario usuario) throws UsuarioInexistenteExeption;
 
