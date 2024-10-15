@@ -1,7 +1,7 @@
 package br.ufpb.dcx.nailton.academia;
 
 import br.ufpb.dcx.nailton.academia.treino.Exercicio;
-import br.ufpb.dcx.nailton.academia.treino.partesDoCorpo;
+import br.ufpb.dcx.nailton.academia.treino.ParteDoCorpo;
 import br.ufpb.dcx.nailton.academia.util.GravadorDeDados;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ public class GravadorDeDadosTest {
         File arquivo = new File(GravadorDeDados.ARQUIVO_TREINOS);
         assertFalse(arquivo.exists());
         HashMap<String, Exercicio> exercicioMap = new HashMap<>();
-        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", partesDoCorpo.PERNAS));
+        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", ParteDoCorpo.PERNAS));
         gravadorDeDados.salvarArquivos(exercicioMap);
         assertTrue(arquivo.exists());
         arquivo.delete();
@@ -37,12 +37,12 @@ public class GravadorDeDadosTest {
         File arquivo = new File(GravadorDeDados.ARQUIVO_TREINOS);
         assertFalse(arquivo.exists());
         HashMap<String, Exercicio> exercicioMap = new HashMap<>();
-        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", partesDoCorpo.PERNAS));
+        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", ParteDoCorpo.PERNAS));
         gravadorDeDados.salvarArquivos(exercicioMap);
         assertTrue(arquivo.exists());
         HashMap<String, Exercicio> exercicioRecuperados = gravadorDeDados.recuperarArquivo();
         Exercicio e1 = exercicioRecuperados.get("agachamento búlgaro");
-        assertEquals(partesDoCorpo.PERNAS, e1.getMusculo());
+        assertEquals(ParteDoCorpo.PERNAS, e1.getMusculo());
         assertEquals("exercicio para partes inferiores", e1.getDescricao());
         assertEquals("agachamento búlgaro", e1.getNome());
         arquivo.delete();

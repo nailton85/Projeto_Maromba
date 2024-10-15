@@ -11,7 +11,7 @@ public class GravadorDeDados {
     public static final String DADOS_USUARIO = "usuario.dat";
 
 
-    public HashMap<String, Exercicio> recuperarArquivo() throws IOException {
+    public HashMap<String, Exercicio> recuperarExercicios() throws IOException {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(ARQUIVO_TREINOS))) {
             return (HashMap<String, Exercicio>) in.readObject();
         } catch (ClassNotFoundException e) {
@@ -19,7 +19,18 @@ public class GravadorDeDados {
         }
     }
 
-    public void salvarArquivos(HashMap<String, Exercicio> exercicio) throws IOException {
+    public HashMap<String, Usuario> recuperarUsuarios() throws IOException {
+//        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(ARQUIVO_TREINOS))) {
+//            return (HashMap<String, Exercicio>) in.readObject();
+//        } catch (ClassNotFoundException e) {
+//            throw new IOException(e);
+//        }
+        return null;
+        //TODO
+    }
+
+    public void salvarDados(HashMap<String, Exercicio> exercicio) throws IOException {
+        //TODO: pASSAR TAMBÉM O MAPA DOS USUÁRIOS
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(ARQUIVO_TREINOS))) {
             out.writeObject(exercicio);
         }

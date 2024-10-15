@@ -1,13 +1,14 @@
 package br.ufpb.dcx.nailton.academia.treino;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Exercicio {
+public class Exercicio implements Serializable {
     private String nome;
     private String descricao; //Talvez criar um objeto para descrição
-    private partesDoCorpo musculo;
+    private ParteDoCorpo musculo;
 
-    public Exercicio(String nome, String descricao, partesDoCorpo musculo){
+    public Exercicio(String nome, String descricao, ParteDoCorpo musculo){
         this.nome = nome;
         this.descricao = descricao;
         this.musculo = musculo;
@@ -29,11 +30,11 @@ public class Exercicio {
         this.descricao = descricao;
     }
 
-    public partesDoCorpo getMusculo() {
+    public ParteDoCorpo getMusculo() {
         return musculo;
     }
 
-    public void setMusculo(partesDoCorpo musculo) {
+    public void setMusculo(ParteDoCorpo musculo) {
         this.musculo = musculo;
     }
 

@@ -1,8 +1,10 @@
-package br.ufpb.dcx.nailton.academia.usuario;
+package br.ufpb.dcx.nailton.academia.melhorias;
 
-import br.ufpb.dcx.nailton.academia.util.MetodosUtilitarios;
+import br.ufpb.dcx.nailton.academia.usuario.Usuario;
+import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
+import br.ufpb.dcx.nailton.academia.treino.SistemaMaromba;
 
-public interface SistemaUserPerfil extends MetodosUtilitarios {
+public interface SistemaUserPerfil extends SistemaMaromba {
     /**
      *
      * @param aluno

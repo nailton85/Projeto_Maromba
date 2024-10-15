@@ -1,8 +1,7 @@
 package br.ufpb.dcx.nailton.janelas.gui;
 
-import br.ufpb.dcx.nailton.academia.usuario.DadosDeUsuario;
-import br.ufpb.dcx.nailton.academia.usuario.SistemaUserPerfil;
-import br.ufpb.dcx.nailton.academia.usuario.SistemaUserPerfilPrograma;
+import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfil;
+import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfilPrograma;
 
 import javax.swing.*;
 import java.awt.*;
