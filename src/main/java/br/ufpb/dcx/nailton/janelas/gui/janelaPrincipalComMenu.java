@@ -2,6 +2,9 @@ package br.ufpb.dcx.nailton.janelas.gui;
 
 import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfil;
 import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfilPrograma;
+import br.ufpb.dcx.nailton.academia.treino.Exercicio;
+import br.ufpb.dcx.nailton.academia.treino.ExercicioInexistenteExeption;
+import br.ufpb.dcx.nailton.academia.treino.SistemaMarombaFitnessRioTinto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +16,7 @@ public class janelaPrincipalComMenu extends JFrame {
     JButton linha3;
     ImageIcon imagenTeste = new ImageIcon("./img/Pesos.jpg");
     SistemaUserPerfil Usuario = new SistemaUserPerfilPrograma();
+    SistemaMarombaFitnessRioTinto exercicio = new SistemaMarombaFitnessRioTinto();
     JMenuBar barraDeMenu = new JMenuBar();
 
     public janelaPrincipalComMenu(){
@@ -22,7 +26,7 @@ public class janelaPrincipalComMenu extends JFrame {
         setResizable(false);
 
         barraMenu();
-        //imagensDaJanela();
+//        imagensDaJanela();
         fundo();
 
     }
@@ -39,16 +43,46 @@ public class janelaPrincipalComMenu extends JFrame {
 
     private void barraMenu() {
         JMenu menuCadastaTreinos = new JMenu("Exercicios");
-        JMenuItem menuAdicionaExercicios = new JMenuItem("Escolha seus exercicos");
-        JMenuItem menuPesquisaExercicio = new JMenuItem("Pesquisa exercicio");
+        JMenuItem menuVerExercicios = new JMenuItem("Tabela Exercicos");
+        JMenu menuAdicionaExercicios = new JMenu("Escolha seus exercicos");
+        JMenuItem menuPesquisaExercicio = new JMenuItem("Pesquisar");
+        JMenuItem menuFiltraExercicio = new JMenuItem("Filtra");
+        JMenuItem menuRemoverExercicio = new JMenuItem("Remover Exercicio");
+
+        menuAdicionaExercicios.add(menuFiltraExercicio);
+        menuAdicionaExercicios.add(menuPesquisaExercicio);
+        menuCadastaTreinos.add(menuVerExercicios);
         menuCadastaTreinos.add(menuAdicionaExercicios);
-        menuCadastaTreinos.add(menuPesquisaExercicio);
+        menuCadastaTreinos.add(menuRemoverExercicio);
 
         JMenu editarDados = new JMenu("Dieta");
-        JMenuItem menuEditaDieta = new JMenuItem("Adicionar Dieta");
-        JMenuItem menuCauculaDieta = new JMenuItem("Caucular Dieta");
-        editarDados.add(menuEditaDieta);
+        JMenuItem historicoAlimentar = new JMenuItem("Histórico Alimentar");
+        JMenuItem menuCauculaDieta = new JMenuItem("Calcular Dieta");
+        editarDados.add(historicoAlimentar);
         editarDados.add(menuCauculaDieta);
+
+        menuPesquisaExercicio.addActionListener(
+                (ae) ->{
+                    String nome = JOptionPane.showInputDialog(this,"Digite o nome do exercicio");
+                    try {
+                        Exercicio procura = exercicio.pesquisaExercicio(nome);
+                    } catch (ExercicioInexistenteExeption e) {
+                        throw new RuntimeException(e);
+                    }
+
+                });
+        menuVerExercicios.addActionListener(
+                (ae)->{
+
+
+        });
+
+        menuFiltraExercicio.addActionListener(
+                (ae) ->{
+
+
+
+        });
 
 
         barraDeMenu.add(menuCadastaTreinos);

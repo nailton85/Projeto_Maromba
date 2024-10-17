@@ -5,16 +5,17 @@ import br.ufpb.dcx.nailton.academia.treino.Exercicio;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-public class AddController {
+public class AdicionarExercicioAddControler {
     private Exercicio exercicio;
     private JFrame janelaPrincipal;
 
-    public AddController(Exercicio exercicio, JFrame janelaPrincipal){
+    public AdicionarExercicioAddControler(Exercicio exercicio, JFrame janelaPrincipal){
         this.exercicio = exercicio;
         this.janelaPrincipal = janelaPrincipal;
     }
 
     public void actionPerformed(ActionEvent e) {
+        String nome = JOptionPane.showInputDialog(janelaPrincipal,"D");
 
     }
 }
