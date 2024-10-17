@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 
 import static org.junit.Assert.*;
@@ -22,8 +23,8 @@ public class GravadorDeDadosTest {
         File arquivo = new File(GravadorDeDados.ARQUIVO_TREINOS);
         assertFalse(arquivo.exists());
         HashMap<String, Exercicio> exercicioMap = new HashMap<>();
-        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", ParteDoCorpo.PERNAS));
-        gravadorDeDados.salvarArquivos(exercicioMap);
+        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", Collections.singletonList(ParteDoCorpo.QUADRICEPS)));
+        gravadorDeDados.salvarDados(exercicioMap);
         assertTrue(arquivo.exists());
         arquivo.delete();
     }
@@ -37,12 +38,12 @@ public class GravadorDeDadosTest {
         File arquivo = new File(GravadorDeDados.ARQUIVO_TREINOS);
         assertFalse(arquivo.exists());
         HashMap<String, Exercicio> exercicioMap = new HashMap<>();
-        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", ParteDoCorpo.PERNAS));
-        gravadorDeDados.salvarArquivos(exercicioMap);
+        exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", Collections.singletonList(ParteDoCorpo.QUADRICEPS)));
+        gravadorDeDados.salvarDados(exercicioMap);
         assertTrue(arquivo.exists());
-        HashMap<String, Exercicio> exercicioRecuperados = gravadorDeDados.recuperarArquivo();
+        HashMap<String, Exercicio> exercicioRecuperados = gravadorDeDados.recuperarExercicios();
         Exercicio e1 = exercicioRecuperados.get("agachamento búlgaro");
-        assertEquals(ParteDoCorpo.PERNAS, e1.getMusculo());
+        assertEquals(ParteDoCorpo.QUADRICEPS, e1.getMusculos());
         assertEquals("exercicio para partes inferiores", e1.getDescricao());
         assertEquals("agachamento búlgaro", e1.getNome());
         arquivo.delete();

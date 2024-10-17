@@ -12,7 +12,6 @@ import java.util.Map;
 
 public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     private HashMap<String, Exercicio> exercicios;
-    private Map<String, Usuario> usuarios;
 
     private GravadorDeDados gravador;
     ;
@@ -20,49 +19,57 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     public SistemaMarombaFitnessRioTinto(){
         this.exercicios = new HashMap<>();
         this.gravador = new GravadorDeDados();
-        this.usuarios = new HashMap<>();
     }
 
 
+    @Override
+    public void adicionaExercicio(String nome, String descicao, List<ParteDoCorpo> musculo) throws ExercicioJaExisteExeption{
+        if (this.exercicios.containsKey(nome)){
+            throw new ExercicioJaExisteExeption("Exercio "+nome+" ja se encontra no banco de dados");
+        }else{
+            Exercicio e = new Exercicio(nome, descicao,musculo);
+            this.exercicios.put(nome,e);
+        }
+    }
+
+    @Override
+    public void removerExercicio(String nome) throws ExercicioInexistenteExeption{
+        if (this.exercicios.containsKey(nome)) {
+            this.exercicios.remove(nome);
+        }else{
+            throw new ExercicioInexistenteExeption("Exercicio "+nome+" não encontrado");
+        }
+    }
 
     @Override
     public Exercicio pesquisaExercicio(String nome) throws ExercicioInexistenteExeption {
         if(this.exercicios.containsKey(nome)){
-            //TODO: pega com get
+            return this.exercicios.get(nome);
         }
         throw new ExercicioInexistenteExeption("Exercicio "+nome+" não foi encontrado");
     }
 
     @Override
-    public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException {
-
-        return null;
+    public List<Exercicio> filtrarExercicioPorTipo(List<ParteDoCorpo> tipo) throws TipoNuloException {
+//        Collection<Exercicio> exerciciosDoTipo = new ArrayList<>();
+//        for(Exercicio c: this.exercicios.values()){
+//            if (c.getMusculos()==tipo){
+//                exerciciosDoTipo.add(c);
+//            }
+//        }
+//        return exerciciosDoTipo;
+        throw new TipoNuloException("cbshihcb");
     }
 
-    @Override
-    public void cadastraUsuario(String nome, String email) throws UsuarioJaExisteException {
-        if(this.usuarios.containsKey(nome)){
-            throw new UsuarioJaExisteException("Já existe usuario cadastrado");
-        }else{
-//            Usuario u = new Usuario(nome, email);
-//            this.usuario.put(nome, u);
-        }
-    }
-
-    @Override
-    public void removerUsuario(Usuario usuario) throws UsuarioInexistenteExeption {
-
-    }
 
     @Override
     public void salvarDados() throws IOException {
-        this.gravador.salvarArquivos(this.exercicios);
+        this.gravador.salvarDados(this.exercicios);
         //TODO: Salvar usuários
     }
 
     @Override
     public void recuperarDados() throws IOException {
-        this.exercicios = this.gravador.recuperarArquivo();
-        this.usuarios = this.gravador.recuperarUsuarios();
+        this.exercicios = this.gravador.recuperarExercicios();
     }
 }
