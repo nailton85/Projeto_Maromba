@@ -1,6 +1,10 @@
-package br.ufpb.dcx.nailton.academia.usuario;
+package br.ufpb.dcx.nailton.academia.usuario.melhorarUsuario;
 
-public class Dadosfisicos {
+import br.ufpb.dcx.nailton.academia.usuario.Sexo;
+
+import java.io.Serializable;
+
+public class Dadosfisicos implements Serializable {
     private double peso;
     private double altura;
     private int idade;

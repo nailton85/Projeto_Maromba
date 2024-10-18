@@ -1,10 +1,9 @@
-package br.ufpb.dcx.nailton.janelas.gui;
+package br.ufpb.dcx.nailton.gui;
 
+import br.ufpb.dcx.nailton.academia.SistemaMarombaFitnessRioTinto;
 import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfil;
 import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfilPrograma;
-import br.ufpb.dcx.nailton.academia.treino.Exercicio;
-import br.ufpb.dcx.nailton.academia.treino.ExercicioInexistenteExeption;
-import br.ufpb.dcx.nailton.academia.treino.SistemaMarombaFitnessRioTinto;
+import br.ufpb.dcx.nailton.academia.treino.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,25 +19,33 @@ public class janelaPrincipalComMenu extends JFrame {
     JMenuBar barraDeMenu = new JMenuBar();
 
     public janelaPrincipalComMenu(){
-        setTitle("aaaaaaaaa");
+        setTitle("Planejamento de Exercicos");
         setSize(800,600);
         setLocation(250,250);
         setResizable(false);
 
+        //Chamar a janela de incerir os dados
+        if (exibirJanelaParaAdicionarDados()) {
+            JLabel rotulo = new JLabel("Bem-vindo à Janela Principal!", SwingConstants.CENTER);
+            getContentPane().add(rotulo);
+
+//        }else {
+//            JOptionPane.showInputDialog(this,"Dados de usuario não foram adicionados");
+//            System.exit(0);
+        }
         barraMenu();
-//        imagensDaJanela();
         fundo();
 
+    }
+    private boolean exibirJanelaParaAdicionarDados(){
+        janelaAdicionaDados dados = new janelaAdicionaDados();
+        dados.setVisible(true);
+        return dados.isExisteDadosParaEsteUsuario();
     }
     private void fundo(){
         princ = new ImageIcon("./img/fundo.jpg").getImage();
         getContentPane().add(new janelaPrincipalComMenu.PanelConFondo());
         linha1 = new JLabel(testeFundo, JLabel.CENTER);
-    }
-    private void imagensDaJanela(){
-        linha3 = new JButton("vvvvvvvvvv");
-        setLayout(new GridLayout(3,1));
-        add(linha3);
     }
 
     private void barraMenu() {
@@ -61,6 +68,26 @@ public class janelaPrincipalComMenu extends JFrame {
         editarDados.add(historicoAlimentar);
         editarDados.add(menuCauculaDieta);
 
+        ExercicioMenu(menuPesquisaExercicio, menuVerExercicios, menuFiltraExercicio);
+        DietaMenu (historicoAlimentar,menuCauculaDieta);
+
+        barraDeMenu.add(menuCadastaTreinos);
+        barraDeMenu.add(editarDados);
+        setJMenuBar(barraDeMenu);
+    }
+    private void DietaMenu(JMenuItem historicoAlimentar, JMenuItem menuCauculaDieta){
+        historicoAlimentar.addActionListener((ae)-> {
+
+        });
+        menuCauculaDieta.addActionListener((ae)->{
+            Double peso = Double.parseDouble(JOptionPane.showInputDialog(this,"Digite seu peso Kg"));
+            Double altura = Double.parseDouble(JOptionPane.showInputDialog(this,"Digite seu altura em METROS"));
+            int idade = Integer.parseInt(JOptionPane.showInputDialog(this,"Digite sua Idade"));
+            //Todo:
+        });
+    }
+
+    private void ExercicioMenu(JMenuItem menuPesquisaExercicio, JMenuItem menuVerExercicios, JMenuItem menuFiltraExercicio) {
         menuPesquisaExercicio.addActionListener(
                 (ae) ->{
                     String nome = JOptionPane.showInputDialog(this,"Digite o nome do exercicio");
@@ -79,16 +106,14 @@ public class janelaPrincipalComMenu extends JFrame {
 
         menuFiltraExercicio.addActionListener(
                 (ae) ->{
-
+                    String menbro = JOptionPane.showInputDialog(this,"Escolha um dos tipos abaixo");
+//                    ParteDoCorpo tipo = exercicio.filtrarExercicioPorTipo(menbro);
+                    //TODO:
 
 
         });
-
-
-        barraDeMenu.add(menuCadastaTreinos);
-        barraDeMenu.add(editarDados);
-        setJMenuBar(barraDeMenu);
     }
+
     private class PanelConFondo extends JPanel {
         @Override
         protected void paintComponent(Graphics g) {

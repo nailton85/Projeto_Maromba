@@ -1,19 +1,32 @@
 package br.ufpb.dcx.nailton.academia.usuario;
 
-import br.ufpb.dcx.nailton.academia.treino.Exercicio;
+import br.ufpb.dcx.nailton.academia.usuario.melhorarUsuario.Dadosfisicos;
+import br.ufpb.dcx.nailton.academia.usuario.melhorarUsuario.Dieta;
 
-import java.util.List;
+import java.io.Serializable;
+import java.util.Objects;
 
-public class Usuario {
+public class Usuario implements Serializable {
+    private String nomeDeUsuario;
     private DadosDeUsuario dados;
-    private Dadosfisicos fisico;
-    private Dieta dieta;
+//    private Dadosfisicos fisico;
+//    private Dieta dieta;
     private TabelaDeTreino treinos;
 
-    public Usuario(DadosDeUsuario dados, Dadosfisicos fisico, Dieta dieta){
+    public Usuario(String nomeDeUsuario, DadosDeUsuario dados, TabelaDeTreino treinos){
         this.dados = dados;
-        this.fisico = fisico;
-        this.dieta = dieta;
+        this.treinos = treinos;
+        this.nomeDeUsuario = nomeDeUsuario;
+//        this.fisico = fisico;
+//        this.dieta = dieta;
+    }
+
+    public String getNomeDeUsuario() {
+        return nomeDeUsuario;
+    }
+
+    public void setNomeDeUsuario(String nomeDeUsuario) {
+        this.nomeDeUsuario = nomeDeUsuario;
     }
 
     public DadosDeUsuario getDados() {
@@ -24,21 +37,42 @@ public class Usuario {
         this.dados = dados;
     }
 
-    public Dadosfisicos getFisico() {
-        return fisico;
+    public TabelaDeTreino getTreinos() {
+        return treinos;
     }
 
-    public void setFisico(Dadosfisicos fisico) {
-        this.fisico = fisico;
+    public void setTreinos(TabelaDeTreino treinos) {
+        this.treinos = treinos;
     }
 
-    public Dieta getDieta() {
-        return dieta;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(nomeDeUsuario, usuario.nomeDeUsuario);
     }
 
-    public void setDieta(Dieta dieta) {
-        this.dieta = dieta;
+    @Override
+    public int hashCode() {
+        return Objects.hash(nomeDeUsuario);
     }
+
+    //    public Dadosfisicos getFisico() {
+//        return fisico;
+//    }
+//
+//    public void setFisico(Dadosfisicos fisico) {
+//        this.fisico = fisico;
+//    }
+//
+//    public Dieta getDieta() {
+//        return dieta;
+//    }
+//
+//    public void setDieta(Dieta dieta) {
+//        this.dieta = dieta;
+//    }
     public void cauculaMacro(){
 
     }

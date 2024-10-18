@@ -1,5 +1,7 @@
 package br.ufpb.dcx.nailton.academia.usuario;
 
-public enum Sexo {
+import java.io.Serializable;
+
+public enum Sexo implements Serializable {
     M, F
 }

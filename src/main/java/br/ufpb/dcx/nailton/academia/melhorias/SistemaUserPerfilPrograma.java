@@ -41,7 +41,7 @@ public class SistemaUserPerfilPrograma implements SistemaUserPerfil{
     }
 
     @Override
-    public List<Exercicio> filtrarExercicioPorTipo(List<ParteDoCorpo> tipo) throws TipoNuloException {
+    public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException {
         return null;
     }
 

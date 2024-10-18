@@ -2,7 +2,7 @@ package br.ufpb.dcx.nailton.academia.melhorias;
 
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
-import br.ufpb.dcx.nailton.academia.treino.SistemaMaromba;
+import br.ufpb.dcx.nailton.academia.SistemaMaromba;
 
 public interface SistemaUserPerfil extends SistemaMaromba {
     /**

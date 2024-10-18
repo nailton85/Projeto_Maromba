@@ -3,12 +3,10 @@ package br.ufpb.dcx.nailton.academia;
 import br.ufpb.dcx.nailton.academia.treino.Exercicio;
 import br.ufpb.dcx.nailton.academia.treino.ExercicioInexistenteExeption;
 import br.ufpb.dcx.nailton.academia.treino.ParteDoCorpo;
-import br.ufpb.dcx.nailton.academia.treino.SistemaMarombaFitnessRioTinto;
 import org.junit.Test;
 
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 
 public class SistemaMarombaFitTest {
     @Test

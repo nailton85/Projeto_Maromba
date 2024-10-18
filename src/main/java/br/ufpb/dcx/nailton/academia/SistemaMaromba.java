@@ -1,9 +1,6 @@
-package br.ufpb.dcx.nailton.academia.treino;
+package br.ufpb.dcx.nailton.academia;
 
-import br.ufpb.dcx.nailton.academia.treino.Exercicio;
-import br.ufpb.dcx.nailton.academia.treino.ExercicioInexistenteExeption;
-import br.ufpb.dcx.nailton.academia.treino.TipoNuloException;
-import br.ufpb.dcx.nailton.academia.treino.ParteDoCorpo;
+import br.ufpb.dcx.nailton.academia.treino.*;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioInexistenteExeption;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
@@ -38,7 +35,7 @@ public interface SistemaMaromba {
      * @param tipo O tipo é a parte do corpo em que este exercicio foca
      * @return Uma Lista de exercicios que trabalhão esta area corporal
      */
-    public List<Exercicio> filtrarExercicioPorTipo(List<ParteDoCorpo> tipo) throws TipoNuloException;
+    public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException;
 
 
 

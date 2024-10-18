@@ -2,7 +2,6 @@ package br.ufpb.dcx.nailton.academia;
 
 import br.ufpb.dcx.nailton.academia.treino.Exercicio;
 import br.ufpb.dcx.nailton.academia.treino.ParteDoCorpo;
-import br.ufpb.dcx.nailton.academia.util.GravadorDeDados;
 import org.junit.Test;
 
 import java.io.File;
@@ -24,7 +23,7 @@ public class GravadorDeDadosTest {
         assertFalse(arquivo.exists());
         HashMap<String, Exercicio> exercicioMap = new HashMap<>();
         exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", Collections.singletonList(ParteDoCorpo.QUADRICEPS)));
-        gravadorDeDados.salvarDados(exercicioMap);
+        gravadorDeDados.salvarDadosExercicios(exercicioMap);
         assertTrue(arquivo.exists());
         arquivo.delete();
     }
@@ -39,7 +38,7 @@ public class GravadorDeDadosTest {
         assertFalse(arquivo.exists());
         HashMap<String, Exercicio> exercicioMap = new HashMap<>();
         exercicioMap.put("agachamento búlgaro", new Exercicio("agachamento búlgaro", "exercicio para partes inferiores", Collections.singletonList(ParteDoCorpo.QUADRICEPS)));
-        gravadorDeDados.salvarDados(exercicioMap);
+        gravadorDeDados.salvarDadosExercicios(exercicioMap);
         assertTrue(arquivo.exists());
         HashMap<String, Exercicio> exercicioRecuperados = gravadorDeDados.recuperarExercicios();
         Exercicio e1 = exercicioRecuperados.get("agachamento búlgaro");

@@ -3,7 +3,7 @@ package br.ufpb.dcx.nailton.academia.melhorias;
 import br.ufpb.dcx.nailton.academia.treino.ExercicioInexistenteExeption;
 import br.ufpb.dcx.nailton.academia.treino.ExercicioJaExisteExeption;
 import br.ufpb.dcx.nailton.academia.treino.ParteDoCorpo;
-import br.ufpb.dcx.nailton.academia.treino.SistemaMaromba;
+import br.ufpb.dcx.nailton.academia.SistemaMaromba;
 
 public interface SistemaGestaoDeExercicios extends SistemaMaromba {
 

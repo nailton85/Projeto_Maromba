@@ -1,4 +1,4 @@
-package br.ufpb.dcx.nailton.academia.util;
+package br.ufpb.dcx.nailton.academia;
 
 import br.ufpb.dcx.nailton.academia.treino.Exercicio;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
@@ -19,20 +19,23 @@ public class GravadorDeDados {
         }
     }
 
-    public HashMap<String, Usuario> recuperarUsuarios() throws IOException {
-//        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(ARQUIVO_TREINOS))) {
-//            return (HashMap<String, Exercicio>) in.readObject();
-//        } catch (ClassNotFoundException e) {
-//            throw new IOException(e);
-//        }
-        return null;
-        //TODO
+    public Usuario recuperarUsuario() throws IOException {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(DADOS_USUARIO))) {
+            return (Usuario) in.readObject();
+        } catch (ClassNotFoundException e) {
+            throw new IOException(e);
+        }
     }
 
-    public void salvarDados(HashMap<String, Exercicio> exercicio) throws IOException {
+    public void salvarDadosExercicios(HashMap<String, Exercicio> exercicio) throws IOException {
         //TODO: pASSAR TAMBÉM O MAPA DOS USUÁRIOS
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(ARQUIVO_TREINOS))) {
             out.writeObject(exercicio);
+        }
+    }
+    public void salvarDadosUsuario(Usuario usuario) throws IOException{
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(DADOS_USUARIO))){
+            out.writeObject(usuario);
         }
     }
 }

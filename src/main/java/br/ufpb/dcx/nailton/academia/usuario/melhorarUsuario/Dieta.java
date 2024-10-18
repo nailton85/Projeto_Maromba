@@ -1,6 +1,8 @@
-package br.ufpb.dcx.nailton.academia.usuario;
+package br.ufpb.dcx.nailton.academia.usuario.melhorarUsuario;
 
-public class Dieta {
+import java.io.Serializable;
+
+public class Dieta implements Serializable {
     private double caloria;
     private double macrosNutrientes;
 

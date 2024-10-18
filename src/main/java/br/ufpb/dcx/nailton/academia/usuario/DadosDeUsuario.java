@@ -1,6 +1,8 @@
 package br.ufpb.dcx.nailton.academia.usuario;
 
-public class DadosDeUsuario{
+import java.io.Serializable;
+
+public class DadosDeUsuario implements Serializable {
     private String nome;
     private String email;
 

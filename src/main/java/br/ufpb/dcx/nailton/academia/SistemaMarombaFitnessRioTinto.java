@@ -1,29 +1,29 @@
-package br.ufpb.dcx.nailton.academia.treino;
+package br.ufpb.dcx.nailton.academia;
 
+import br.ufpb.dcx.nailton.academia.treino.*;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
-import br.ufpb.dcx.nailton.academia.usuario.UsuarioInexistenteExeption;
-import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
-import br.ufpb.dcx.nailton.academia.util.GravadorDeDados;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     private HashMap<String, Exercicio> exercicios;
-
+    private Usuario usuario;
     private GravadorDeDados gravador;
     ;
 
     public SistemaMarombaFitnessRioTinto(){
         this.exercicios = new HashMap<>();
         this.gravador = new GravadorDeDados();
+        this.usuario = null;
+
     }
 
 
     @Override
-    public void adicionaExercicio(String nome, String descicao, List<ParteDoCorpo> musculo) throws ExercicioJaExisteExeption{
+    public void adicionaExercicio(String nome, String descicao, List<ParteDoCorpo> musculo) throws ExercicioJaExisteExeption {
         if (this.exercicios.containsKey(nome)){
             throw new ExercicioJaExisteExeption("Exercio "+nome+" ja se encontra no banco de dados");
         }else{
@@ -33,7 +33,7 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     }
 
     @Override
-    public void removerExercicio(String nome) throws ExercicioInexistenteExeption{
+    public void removerExercicio(String nome) throws ExercicioInexistenteExeption {
         if (this.exercicios.containsKey(nome)) {
             this.exercicios.remove(nome);
         }else{
@@ -50,26 +50,30 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     }
 
     @Override
-    public List<Exercicio> filtrarExercicioPorTipo(List<ParteDoCorpo> tipo) throws TipoNuloException {
-//        Collection<Exercicio> exerciciosDoTipo = new ArrayList<>();
-//        for(Exercicio c: this.exercicios.values()){
-//            if (c.getMusculos()==tipo){
-//                exerciciosDoTipo.add(c);
-//            }
-//        }
-//        return exerciciosDoTipo;
-        throw new TipoNuloException("cbshihcb");
+    public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException {
+        if(tipo == null){
+            throw new TipoNuloException("cscs");
+        }
+
+        List<Exercicio> exerciciosDoTipo = new ArrayList<>();
+        for(Exercicio c: this.exercicios.values()){
+            if (c.getMusculos().contains(tipo)){
+                exerciciosDoTipo.add(c);
+            }
+        }
+        return exerciciosDoTipo;
     }
 
 
     @Override
     public void salvarDados() throws IOException {
-        this.gravador.salvarDados(this.exercicios);
-        //TODO: Salvar usuários
+        this.gravador.salvarDadosExercicios(this.exercicios);
+        this.gravador.salvarDadosUsuario(this.usuario);
     }
 
     @Override
     public void recuperarDados() throws IOException {
         this.exercicios = this.gravador.recuperarExercicios();
+        this.usuario = this.gravador.recuperarUsuario();
     }
 }
