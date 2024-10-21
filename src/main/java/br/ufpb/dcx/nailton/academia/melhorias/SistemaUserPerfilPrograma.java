@@ -9,10 +9,10 @@ import java.util.List;
 
 public class SistemaUserPerfilPrograma implements SistemaUserPerfil{
 
-    @Override
-    public void cadastraUsuario(Usuario aluno) throws UsuarioJaExisteException {
-
-    }
+//    @Override
+//    public void cadastraUsuario(Usuario aluno) throws UsuarioJaExisteException {
+//
+//    }
 
 
     @Override
@@ -43,6 +43,11 @@ public class SistemaUserPerfilPrograma implements SistemaUserPerfil{
     @Override
     public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException {
         return null;
+    }
+
+    @Override
+    public void cadastraUsuario(String nome, String email, String nomeDeUsuario) {
+
     }
 
     @Override

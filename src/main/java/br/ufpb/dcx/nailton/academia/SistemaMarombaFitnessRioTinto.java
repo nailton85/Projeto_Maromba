@@ -1,6 +1,7 @@
 package br.ufpb.dcx.nailton.academia;
 
 import br.ufpb.dcx.nailton.academia.treino.*;
+import br.ufpb.dcx.nailton.academia.usuario.DadosDeUsuario;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 
 import java.io.*;
@@ -62,6 +63,12 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
             }
         }
         return exerciciosDoTipo;
+    }
+
+    @Override
+    public void cadastraUsuario(String nome, String email, String nomeDeUsuario) {
+        DadosDeUsuario dados = new DadosDeUsuario(email,nomeDeUsuario);
+        usuario = new Usuario(nome,dados,null);
     }
 
 

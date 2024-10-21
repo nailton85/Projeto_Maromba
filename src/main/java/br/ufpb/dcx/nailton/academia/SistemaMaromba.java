@@ -37,6 +37,8 @@ public interface SistemaMaromba {
      */
     public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException;
 
+    public void cadastraUsuario(String nome, String email, String nomeDeUsuario);
+
 
 
 

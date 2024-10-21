@@ -14,7 +14,7 @@ public class janelaPrincipalComMenu extends JFrame {
     JLabel linha1, linha2;
     JButton linha3;
     ImageIcon imagenTeste = new ImageIcon("./img/Pesos.jpg");
-    SistemaUserPerfil Usuario = new SistemaUserPerfilPrograma();
+    SistemaMarombaFitnessRioTinto Usuario = new SistemaMarombaFitnessRioTinto();
     SistemaMarombaFitnessRioTinto exercicio = new SistemaMarombaFitnessRioTinto();
     JMenuBar barraDeMenu = new JMenuBar();
 

@@ -1,5 +1,8 @@
 package br.ufpb.dcx.nailton.gui;
 
+import br.ufpb.dcx.nailton.academia.SistemaMarombaFitnessRioTinto;
+import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfil;
+import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfilPrograma;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 
 import javax.swing.*;
@@ -8,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class janelaAdicionaDados extends JDialog {
+    SistemaMarombaFitnessRioTinto Usuario = new SistemaMarombaFitnessRioTinto();
     private boolean existeDadosParaEsteUsuario = false;
     public janelaAdicionaDados(){
         setTitle("Adicione seu dados ao sistema");
@@ -47,7 +51,8 @@ public class janelaAdicionaDados extends JDialog {
                 String email= campoEmail.getText();
                 String nomeUsuario = campoUsuario.getText();
 
-                if (Usuario =! null) {
+                if (Usuario == null) {
+                    Usuario.cadastraUsuario(usuario,email,nomeUsuario);
                     existeDadosParaEsteUsuario = true;
                     dispose(); // Fecha a janela de login
                 } else {

@@ -10,7 +10,7 @@ public interface SistemaUserPerfil extends SistemaMaromba {
      * @param aluno
      * @throws UsuarioJaExisteException
      */
-    public void cadastraUsuario(Usuario aluno)throws UsuarioJaExisteException;
+//    public void cadastraUsuario(Usuario aluno)throws UsuarioJaExisteException;
 
     /**
      *
