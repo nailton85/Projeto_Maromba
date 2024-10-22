@@ -66,11 +66,20 @@ public class janelaPrincipalComMenu extends JFrame {
         editarDados.add(historicoAlimentar);
         editarDados.add(menuCauculaDieta);
 
+        JMenu dadosUsuario = new JMenu("Meus Dados");
+        JMenuItem editarDadosUsuario = new JMenuItem("Editar");
+        JMenuItem verDados = new JMenuItem("Perfil");
+        dadosUsuario.add(editarDadosUsuario);
+        dadosUsuario.add(verDados);
+
+
         ExercicioMenu(menuPesquisaExercicio, menuVerExercicios, menuFiltraExercicio);
         DietaMenu (historicoAlimentar,menuCauculaDieta);
+        perfilMenu(editarDadosUsuario, verDados);
 
         barraDeMenu.add(menuCadastaTreinos);
         barraDeMenu.add(editarDados);
+        barraDeMenu.add(dadosUsuario);
         setJMenuBar(barraDeMenu);
     }
     private void DietaMenu(JMenuItem historicoAlimentar, JMenuItem menuCauculaDieta){
@@ -109,6 +118,18 @@ public class janelaPrincipalComMenu extends JFrame {
                     String menbro = JOptionPane.showInputDialog(this,"Escolha um dos tipos abaixo");
 //                    ParteDoCorpo tipo = exercicio.filtrarExercicioPorTipo(menbro);
                     //TODO:
+
+
+        });
+    }
+    private void perfilMenu(JMenuItem editarDadosUsuario, JMenuItem verDados){
+        editarDadosUsuario.addActionListener(
+                (ae) ->{
+
+        });
+        verDados.addActionListener(
+                (ae)->{
+
 
 
         });
