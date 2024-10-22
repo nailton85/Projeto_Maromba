@@ -84,6 +84,9 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
         }
         return taxa;
     }
+    public double hidratacao(double peso){
+        return 40*peso;
+    }
 
 
     @Override

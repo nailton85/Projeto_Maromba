@@ -42,6 +42,8 @@ public interface SistemaMaromba {
 
     public double cauculaDieta(double peso, double altura, int idade, Sexo sexo);
 
+    public double hidratacao(double peso);
+
 
 
 

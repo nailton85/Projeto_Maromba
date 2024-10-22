@@ -1,8 +1,6 @@
 package br.ufpb.dcx.nailton.gui;
 
 import br.ufpb.dcx.nailton.academia.SistemaMarombaFitnessRioTinto;
-import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfil;
-import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfilPrograma;
 import br.ufpb.dcx.nailton.academia.treino.*;
 import br.ufpb.dcx.nailton.academia.usuario.Sexo;
 
