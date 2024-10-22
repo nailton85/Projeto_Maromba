@@ -51,4 +51,13 @@ public class Exercicio implements Serializable {
     public int hashCode() {
         return Objects.hash(nome);
     }
+
+    @Override
+    public String toString() {
+        return "Exercicio{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", musculos=" + musculos +
+                '}';
+    }
 }

@@ -1,7 +1,6 @@
-package br.ufpb.dcx.nailton.gui;
+package br.ufpb.dcx.nailton.gui.NTempo;
 
 import br.ufpb.dcx.nailton.academia.SistemaMarombaFitnessRioTinto;
-import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 
 import javax.swing.*;
 import java.awt.*;

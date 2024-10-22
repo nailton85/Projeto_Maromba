@@ -9,12 +9,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     private HashMap<String, Exercicio> exercicios;
     private Usuario usuario;
     private GravadorDeDados gravador;
-    ;
 
     public SistemaMarombaFitnessRioTinto(){
         this.exercicios = new HashMap<>();
@@ -54,17 +54,13 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
 
     @Override
     public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException {
-        if(tipo == null){
-            throw new TipoNuloException("cscs");
+        if (tipo == null) {
+            throw new TipoNuloException("Tipo não pode ser nulo");
         }
 
-        List<Exercicio> exerciciosDoTipo = new ArrayList<>();
-        for(Exercicio c: this.exercicios.values()){
-            if (c.getMusculos().contains(tipo)){
-                exerciciosDoTipo.add(c);
-            }
-        }
-        return exerciciosDoTipo;
+        return this.exercicios.values().stream()
+                .filter(exercicio -> exercicio.getMusculos().contains(tipo))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -85,7 +81,7 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
         return taxa;
     }
     public double hidratacao(double peso){
-        return 40*peso;
+        return (40*peso)/1000;
     }
 
 
@@ -99,5 +95,12 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     public void recuperarDados() throws IOException {
         this.exercicios = this.gravador.recuperarExercicios();
         this.usuario = this.gravador.recuperarUsuario();
+    }
+    public HashMap<String, Exercicio> getExercicios() {
+        return exercicios;
+    }
+
+    public Usuario getUsuario() {
+        return this.usuario; // Retorna o usuário ou null se não houver um cadastrado
     }
 }

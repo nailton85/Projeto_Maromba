@@ -1,9 +1,13 @@
 package br.ufpb.dcx.nailton.academia.usuario;
 
 import br.ufpb.dcx.nailton.academia.treino.Exercicio;
+import br.ufpb.dcx.nailton.academia.treino.ParteDoCorpo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TabelaDeTreino implements Serializable {
     private List<Exercicio> exercicios;
@@ -29,4 +33,12 @@ public class TabelaDeTreino implements Serializable {
     public void setDia(SemanaDia dia) {
         this.dia = dia;
     }
+
+    public List<Exercicio> filtrarExercicioPorDia(SemanaDia dia) {
+        if (this.dia.equals(dia)) {
+            return new ArrayList<>(this.exercicios); // Retorna os exercícios se o dia corresponder
+        }
+        return Collections.emptyList(); // Retorna uma lista vazia se o dia não corresponder
+    }
+
 }

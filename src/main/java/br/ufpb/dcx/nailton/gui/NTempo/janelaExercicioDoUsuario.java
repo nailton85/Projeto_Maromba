@@ -1,13 +1,10 @@
-package br.ufpb.dcx.nailton.gui;
+package br.ufpb.dcx.nailton.gui.NTempo;
 
-import br.ufpb.dcx.nailton.academia.SistemaMarombaFitnessRioTinto;
 import br.ufpb.dcx.nailton.academia.treino.Exercicio;
 import br.ufpb.dcx.nailton.academia.treino.ParteDoCorpo;
-import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class janelaExercicioDoUsuario extends JFrame {
