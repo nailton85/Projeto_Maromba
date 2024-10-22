@@ -11,9 +11,7 @@ import java.awt.*;
 public class janelaPrincipalComMenu extends JFrame {
     private Image princ;
     ImageIcon testeFundo = new ImageIcon("./img/fundo.jpg");
-    JLabel linha1, linha2;
-    JButton linha3;
-    ImageIcon imagenTeste = new ImageIcon("./img/Pesos.jpg");
+    JLabel linha1;
     SistemaMarombaFitnessRioTinto Usuario = new SistemaMarombaFitnessRioTinto();
     SistemaMarombaFitnessRioTinto exercicio = new SistemaMarombaFitnessRioTinto();
     JMenuBar barraDeMenu = new JMenuBar();
@@ -100,6 +98,8 @@ public class janelaPrincipalComMenu extends JFrame {
                 });
         menuVerExercicios.addActionListener(
                 (ae)->{
+                    janelaExercicioDoUsuario tabelaExercicio = new janelaExercicioDoUsuario();
+                    tabelaExercicio.setVisible(true);
 
 
         });
@@ -113,6 +113,7 @@ public class janelaPrincipalComMenu extends JFrame {
 
         });
     }
+
 
     private class PanelConFondo extends JPanel {
         @Override
