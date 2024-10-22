@@ -1,6 +1,7 @@
 package br.ufpb.dcx.nailton.academia;
 
 import br.ufpb.dcx.nailton.academia.treino.*;
+import br.ufpb.dcx.nailton.academia.usuario.Sexo;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioInexistenteExeption;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
@@ -38,6 +39,8 @@ public interface SistemaMaromba {
     public List<Exercicio> filtrarExercicioPorTipo(ParteDoCorpo tipo) throws TipoNuloException;
 
     public void cadastraUsuario(String nome, String email, String nomeDeUsuario);
+
+    public double cauculaDieta(double peso, double altura, int idade, Sexo sexo);
 
 
 

@@ -4,6 +4,7 @@ import br.ufpb.dcx.nailton.academia.SistemaMarombaFitnessRioTinto;
 import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfil;
 import br.ufpb.dcx.nailton.academia.melhorias.SistemaUserPerfilPrograma;
 import br.ufpb.dcx.nailton.academia.treino.*;
+import br.ufpb.dcx.nailton.academia.usuario.Sexo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -90,7 +91,9 @@ public class janelaPrincipalComMenu extends JFrame {
             Double peso = Double.parseDouble(JOptionPane.showInputDialog(this,"Digite seu peso Kg"));
             Double altura = Double.parseDouble(JOptionPane.showInputDialog(this,"Digite seu altura em METROS"));
             int idade = Integer.parseInt(JOptionPane.showInputDialog(this,"Digite sua Idade"));
-            //Todo:
+            Sexo sexo = Sexo.M;
+            JOptionPane.showInputDialog(exercicio.cauculaDieta(peso,altura,idade,sexo));
+
         });
     }
 

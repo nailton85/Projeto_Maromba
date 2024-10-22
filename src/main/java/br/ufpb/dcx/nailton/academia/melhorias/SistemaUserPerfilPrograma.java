@@ -1,6 +1,7 @@
 package br.ufpb.dcx.nailton.academia.melhorias;
 
 import br.ufpb.dcx.nailton.academia.treino.*;
+import br.ufpb.dcx.nailton.academia.usuario.Sexo;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 import br.ufpb.dcx.nailton.academia.usuario.UsuarioJaExisteException;
 
@@ -48,6 +49,11 @@ public class SistemaUserPerfilPrograma implements SistemaUserPerfil{
     @Override
     public void cadastraUsuario(String nome, String email, String nomeDeUsuario) {
 
+    }
+
+    @Override
+    public double cauculaDieta(double peso, double altura, int idade, Sexo sexo) {
+        return 0;
     }
 
     @Override

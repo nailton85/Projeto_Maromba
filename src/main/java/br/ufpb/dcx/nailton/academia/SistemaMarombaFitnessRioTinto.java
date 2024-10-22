@@ -2,6 +2,7 @@ package br.ufpb.dcx.nailton.academia;
 
 import br.ufpb.dcx.nailton.academia.treino.*;
 import br.ufpb.dcx.nailton.academia.usuario.DadosDeUsuario;
+import br.ufpb.dcx.nailton.academia.usuario.Sexo;
 import br.ufpb.dcx.nailton.academia.usuario.Usuario;
 
 import java.io.*;
@@ -46,8 +47,9 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     public Exercicio pesquisaExercicio(String nome) throws ExercicioInexistenteExeption {
         if(this.exercicios.containsKey(nome)){
             return this.exercicios.get(nome);
+        }else {
+            throw new ExercicioInexistenteExeption("Exercicio " + nome + " não foi encontrado");
         }
-        throw new ExercicioInexistenteExeption("Exercicio "+nome+" não foi encontrado");
     }
 
     @Override
@@ -69,6 +71,18 @@ public class SistemaMarombaFitnessRioTinto implements SistemaMaromba {
     public void cadastraUsuario(String nome, String email, String nomeDeUsuario) {
         DadosDeUsuario dados = new DadosDeUsuario(email,nomeDeUsuario);
         usuario = new Usuario(nome,dados,null);
+    }
+
+    @Override
+    public double cauculaDieta(double peso, double altura, int idade, Sexo sexo) {
+        Double taxa = 0.0;
+        if(sexo == Sexo.M){
+            taxa = 66 + (13.7*peso) + (5.0 * altura) - (6.8 * idade);
+        }
+        else{
+            taxa = 665 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade);
+        }
+        return taxa;
     }
 
 
